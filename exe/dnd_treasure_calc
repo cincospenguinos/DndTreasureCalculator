@@ -1,17 +1,58 @@
 #!/usr/bin/env ruby
 require 'thor'
 require 'dnd_treasure_calc'
+require 'byebug'
 
 class Calculator < Thor
-  desc 'individual CR AMOUNT', 'Get some amount of coins'
+  desc 'individual CR AMOUNT', 'Calculate coins for AMOUNT monsters with a challenge rating of CR. Use --show_each flag to prevent coins from merging'
+  option :show_each, :type => :boolean
   def individual(challenge_rating, amount)
+    challenge_rating = challenge_rating.to_i
+    amount = amount.to_i
+
   	coins = []
   	amount.times { coins += DndTreasureCalc.individual(challenge_rating) }
-  	coins.inspect
+
+    coins = merge_coins(coins) unless options[:show_each]
+    print_coins(coins)
   end
 
   desc 'horde CR', 'Get some collection of coins and things'
   def horde(challenge_rating)
   	puts 'This is not yet implemented.'
   end
+
+  private
+
+  # Merge all the coins together into single sets
+  def merge_coins(coins_array)
+    buckets = {}
+    DndTreasureCalc::COINS.each { |c| buckets[c] = [] }
+    coins_array.each { |c| buckets[c.type] << c }
+
+    coins_array = []
+    current_coin = nil
+    buckets.each do |_, coins|
+      coins.each do |c|
+        if current_coin.nil?
+          current_coin = c
+          next
+        end
+
+        current_coin += c
+      end
+
+      coins_array << current_coin unless current_coin.nil?
+      current_coin = nil
+    end
+
+    coins_array
+  end
+
+  def print_coins(coins_array)
+    puts 'COINS'
+    coins_array.each { |c| puts "\t#{c.amount}\t#{c.type}" }
+  end
 end
+
+Calculator.start(ARGV)

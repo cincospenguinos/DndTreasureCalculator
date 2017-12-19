@@ -8,13 +8,13 @@ module DndTreasureCalc
     def initialize(rolls, faces, modifier=0)
       @rolls = rolls
       @faces = faces
-      modifier = modifier
+      @modifier = modifier
     end
 
     def roll
       total = 0
       @rolls.times { total += @@rand.rand(@faces) + 1 }
-      total += modifier
+      total += @modifier
       total
     end
 
