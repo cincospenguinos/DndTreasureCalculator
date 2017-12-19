@@ -1,0 +1,137 @@
+---
+  # Challenge 0-4
+  - 30:
+      - :multiplier: 1
+        :rolls: 5
+        :faces: 6
+        :type: :copper
+    60:
+      - :multiplier: 1
+        :rolls: 5
+        :faces: 6
+        :type: :silver
+    70:
+      - :multiplier: 1
+        :rolls: 5
+        :faces: 6
+        :type: :electrum
+    95:
+      - :multiplier: 1
+        :rolls: 5
+        :faces: 6
+        :type: :gold
+    100:
+      - :multiplier: 1
+        :rolls: 5
+        :faces: 6
+        :type: :platinum
+
+  # Challenge 5-10
+  - 30:
+      - :multiplier: 100
+        :rolls: 4
+        :faces: 6
+        :type: :copper
+      - :multiplier: 10
+        :rolls: 1
+        :faces: 6
+        :type: :electrum
+    60:
+      - :multiplier: 10
+        :rolls: 6
+        :faces: 6
+        :type: :silver
+      - :multiplier: 10
+        :rolls: 2
+        :faces: 6
+        :type: :gold
+    70:
+      - :multiplier: 10
+        :rolls: 3
+        :faces: 6
+        :type: :electrum
+      - :multiplier: 10
+        :rolls: 2
+        :faces: 6
+        :type: :gold
+    95:
+      - :multiplier: 10
+        :rolls: 4
+        :faces: 6
+        :type: :gold
+    100:
+      - :multiplier: 10
+        :rolls: 2
+        :faces: 6
+        :type: :gold
+      - :multiplier: 1
+        :rolls: 3
+        :faces: 6
+        :type: :platinum
+
+  # Challenge 11-16
+  - 20:
+      - :multiplier: 100
+        :rolls: 4
+        :faces: 6
+        :type: :silver
+      - :multiplier: 100
+        :rolls: 1
+        :faces: 6
+        :type: :gold
+    35:
+      - :multiplier: 100
+        :rolls: 1
+        :faces: 6
+        :type: :electrum
+      - :multiplier: 100
+        :rolls: 1
+        :faces: 6
+        :type: :gold
+    75:
+      - :multiplier: 100
+        :rolls: 2
+        :faces: 6
+        :type: :gold
+      - :multiplier: 10
+        :rolls: 1
+        :faces: 6
+        :type: :platinum
+    100:
+      - :multiplier: 100
+        :rolls: 2
+        :faces: 6
+        :type: :gold
+      - :multiplier: 10
+        :rolls: 2
+        :faces: 6
+        :type: :platinum
+
+  # Challenge 17+
+  - 15:
+      - :multiplier: 1000
+        :rolls: 2
+        :faces: 6
+        :type: :electrum
+      - :multiplier: 100
+        :rolls: 8
+        :faces: 6
+        :type: :gold
+    55:
+      - :multiplier: 1000
+        :rolls: 1
+        :faces: 6
+        :type: :gold
+      - :multiplier: 100
+        :rolls: 1
+        :faces: 6
+        :type: :platinum
+    100:
+      - :multiplier: 1000
+        :rolls: 1
+        :faces: 6
+        :type: :gold
+      - :multiplier: 100
+        :rolls: 2
+        :faces: 6
+        :type: :platinum

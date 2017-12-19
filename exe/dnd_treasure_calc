@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+require 'thor'
+require 'dnd_treasure_calc'
+
+class Calculator < Thor
+  desc 'individual CR AMOUNT', 'Get some amount of coins'
+  def individual(challenge_rating, amount)
+  	coins = []
+  	amount.times { coins += DndTreasureCalc.individual(challenge_rating) }
+  	coins.inspect
+  end
+
+  desc 'horde CR', 'Get some collection of coins and things'
+  def horde(challenge_rating)
+  	puts 'This is not yet implemented.'
+  end
+end
