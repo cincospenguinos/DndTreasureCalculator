@@ -7,9 +7,9 @@
   silver:
     electrum: 5
     gold: 10
-    platinum: 50
+    platinum: 100
   electrum:
     gold: 2
-    platinum: 10
+    platinum: 20
   gold:
-    platinum: 5
+    platinum: 10
