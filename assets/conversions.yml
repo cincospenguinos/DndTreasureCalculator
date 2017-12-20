@@ -1,15 +1,18 @@
 # For managing conversions between coin types.
 #
-# Works like this:
-#   silver -> electrum takes 5 silver
-#   electrum -> platinum takes 10 electrum
+# Works by breaking down, rather than building up
 ---
-  silver:
-    electrum: 5
-    gold: 10
-    platinum: 100
-  electrum:
-    gold: 2
-    platinum: 20
-  gold:
-    platinum: 10
+  :platinum:
+    :gold: 100
+    :electrum: 200
+    :silver: 10000
+    :copper: 1000000
+  :gold:
+    :electrum: 2
+    :silver: 10
+    :copper: 100
+  :electrum:
+    :silver: 5
+    :copper: 50
+  :silver:
+    :copper: 100

@@ -1,10 +1,9 @@
 #!/usr/bin/env ruby
 require 'thor'
 require 'dnd_treasure_calc'
-require 'byebug'
 
 class Calculator < Thor
-  desc 'individual CR AMOUNT', 'Calculate coins for AMOUNT monsters with a challenge rating of CR. Use --show_each flag to prevent coins from merging'
+  desc 'individual CR AMOUNT', 'Calculate coins for AMOUNT monsters with a challenge rating of CR.'
   option :show_each, :type => :boolean
   def individual(challenge_rating, amount)
     challenge_rating = challenge_rating.to_i
@@ -15,11 +14,6 @@ class Calculator < Thor
 
     coins = merge_coins(coins) unless options[:show_each]
     print_coins(coins)
-  end
-
-  desc 'horde CR', 'Get some collection of coins and things'
-  def horde(challenge_rating)
-  	puts 'This is not yet implemented.'
   end
 
   private
@@ -49,6 +43,7 @@ class Calculator < Thor
     coins_array
   end
 
+  # Print the coins array out
   def print_coins(coins_array)
     puts 'COINS'
     coins_array.each { |c| puts "\t#{c.amount}\t#{c.type}" }

@@ -15,13 +15,16 @@ module DndTreasureCalc
 
     def +(coins)
       raise RuntimeError, "#{coins} is not an instance of Coins" unless coins.is_a?(Coins)
-      coins.convert_to(@type) if coins.type != @type
+      coins.convert_to(@type) ? 0 : convert_to(coins.type)
       Coins.new(@amount + coins.amount, @type)
     end
 
+    # Converts this coin to the type provided
     def convert_to(type)
-      raise RuntimeError, 'Not implemented'
+      return false if @@conversions[@type].nil? || @@conversions[@type][type].nil?
+      return true if @type == type
+      @amount *= @@conversions[@type][type]
+      @type = type
     end
-
   end
 end

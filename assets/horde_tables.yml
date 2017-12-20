@@ -1,2 +1,60 @@
+# This may never be done, because I can't justify spending tons of time encoding every horde table
+# and magic items table into YAML, when I can just look up the tables and generate a treasure horde
+# whenever I want.
 ---
-  
+  # Challenge Rating 0-4
+  - :coins:
+      - :multiplier: 100
+        :rolls: 2
+        :faces: 6
+        :type: :copper
+      - :multiplier: 1000
+        :rolls: 2
+        :faces: 6
+        :type: :silver
+      - :multiplier: 100
+        :rolls: 6
+        :faces: 6
+        :type: :gold
+      - :multiplier: 10
+        :rolls: 3
+        :faces: 6
+        :type: :platinum
+    :magic_table:
+      6:
+      16:
+        :gems:
+          :rolls: 2
+          :faces: 6
+          :value:
+            :amount: 10
+            :type: gold
+      26:
+        :art:
+          :rolls: 2
+          :faces: 4
+          :value:
+            :amount: 25
+            :type: gold
+      36:
+      44:
+      52:
+      60:
+      65:
+      70:
+      75:
+      78:
+      80:
+      85:
+      92:
+      97:
+      99:
+      100:
+  # Challenge Rating 5-10
+  - :coins:
+
+  # Challenge Rating 11-16
+  - :coins:
+
+  # Challenge Rating 17+
+  - :coins:

@@ -1,6 +1,6 @@
 # DndTreasureCalc
 
-A simple CLI to calculate treasure for Dungeons and Dragons. I figured I could make a single tool that would do it for me,
+A simple CLI to calculate treasure for Dungeons and Dragons 5e. I figured I could make a single tool that would do it for me,
 and I'd never have to do it manually again.
 
 ## Installation
@@ -21,9 +21,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO
+Right now there is only one command to generate individual treasure, of the format `dnd_treasure_calc individual [challenge rating] [number of monsters]`. Examples below:
 
 ```bash
+individual 6 1 # Treasure held by one monster with a challenge rating of 6
+individual 2 5 # Treasure held by five different monsters with a challenge rating of 2
+individual 2 5 --show_each # Treasure held by five different monsters with a challenge rating of 2, displayed individually
 ```
 
 ## Development
